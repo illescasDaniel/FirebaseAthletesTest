@@ -9,12 +9,13 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class UsersAndTeamsViewController: UIViewController {
 	
 	// MARK: IBOutlets
-	@IBOutlet weak var userCollectionView: UICollectionView!
 	
 	//
+	lazy var userCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+	lazy var teamsTableView = UITableView(frame: .zero, style: .plain)
 	lazy var searchController = UISearchController(searchResultsController: nil)
 	lazy var activityIndicator = UIActivityIndicatorView(style: .medium)
 	
@@ -26,14 +27,39 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		
+		self.view.addSubview(userCollectionView)
+		userCollectionView.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			userCollectionView.topAnchor.constraint(equalTo: self.view.topAnchor),
+			userCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+			userCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+			userCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+		])
 		self.userCollectionView.backgroundColor = .systemGroupedBackground
+		
+		self.view.addSubview(teamsTableView)
+		teamsTableView.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			teamsTableView.topAnchor.constraint(equalTo: self.view.topAnchor),
+			teamsTableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+			teamsTableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+			teamsTableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+		])
+		self.teamsTableView.backgroundColor = .systemGroupedBackground
+		teamsTableView.isHidden = true
 
+		
+		//
+		
 		self.userCollectionView.register(
 			UINib(nibName: "\(UserCollectionViewCell.self)", bundle: .main),
 			forCellWithReuseIdentifier: "\(UserCollectionViewCell.self)"
 		)
 		self.userCollectionView.dataSource = self
 		self.userCollectionView.delegate = self
+		
+		//
 		
 		self.title = "Athlets"
 		
@@ -42,6 +68,7 @@ class ViewController: UIViewController {
 		self.searchController.searchBar.scopeButtonTitles = ["Athlets", "Teams"]
 		self.searchController.searchBar.selectedScopeButtonIndex = 0
 		self.searchController.searchBar.showsScopeBar = true
+		self.searchController.searchBar.delegate = self
 		
 		self.navigationItem.searchController = searchController
 		self.definesPresentationContext = true
@@ -66,8 +93,19 @@ class ViewController: UIViewController {
 	}
 }
 
+extension UsersAndTeamsViewController: UISearchBarDelegate {
+	func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+		if selectedScope == 0 {
+			self.teamsTableView.isHidden = true
+			self.userCollectionView.isHidden = false
+		} else {
+			self.teamsTableView.isHidden = false
+			self.userCollectionView.isHidden = true
+		}
+	}
+}
 
-extension ViewController: UISearchResultsUpdating {
+extension UsersAndTeamsViewController: UISearchResultsUpdating {
 	func updateSearchResults(for searchController: UISearchController) {
 		let searchText = searchController.searchBar.text ?? ""
 		if searchText.isEmpty {
@@ -83,7 +121,7 @@ extension ViewController: UISearchResultsUpdating {
 		self.userCollectionView.reloadData()
 	}
 }
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension UsersAndTeamsViewController: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		return CGSize(width: self.view.bounds.width, height: 100)
 	}
@@ -94,7 +132,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 		return 0
 	}
 }
-extension ViewController: UICollectionViewDataSource {
+extension UsersAndTeamsViewController: UICollectionViewDataSource {
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		1
 	}
