@@ -11,18 +11,16 @@ import Firebase
 
 class UsersAndTeamsViewController: UIViewController {
 	
-	// MARK: IBOutlets
-	
-	//
+	// MARK: Views
 	lazy var userCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+	lazy var usersDataSource = UsersDataSource()
 	lazy var teamsTableView = UITableView(frame: .zero, style: .plain)
 	lazy var searchController = UISearchController(searchResultsController: nil)
 	lazy var activityIndicator = UIActivityIndicatorView(style: .medium)
 	
-	//
-	
-	var allUsers: [User] = []
-	var displayedUsers: [User] = []
+	// MARK: Data
+	//var allUsers: [User] = []
+	//var displayedUsers: [User] = []
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -56,7 +54,7 @@ class UsersAndTeamsViewController: UIViewController {
 			UINib(nibName: "\(UserCollectionViewCell.self)", bundle: .main),
 			forCellWithReuseIdentifier: "\(UserCollectionViewCell.self)"
 		)
-		self.userCollectionView.dataSource = self
+		self.userCollectionView.dataSource = self.usersDataSource
 		self.userCollectionView.delegate = self
 		
 		//
@@ -82,8 +80,8 @@ class UsersAndTeamsViewController: UIViewController {
 			.queryOrdered(byChild: "\(User.k.name)")
 			.observeSingleEvent(of: .value) { (snapshot) in
 				let userList = UserList(keyValuePairs: snapshot.keyValuePairs())
-				self.allUsers = userList.items.map { $0.value }
-				self.displayedUsers = self.allUsers
+				self.usersDataSource.allUsers = userList.items.map { $0.value }
+				self.usersDataSource.displayedUsers = self.usersDataSource.allUsers
 				
 				self.activityIndicator.stopAnimating()
 				self.userCollectionView.backgroundView?.isHidden = true
@@ -109,13 +107,13 @@ extension UsersAndTeamsViewController: UISearchResultsUpdating {
 	func updateSearchResults(for searchController: UISearchController) {
 		let searchText = searchController.searchBar.text ?? ""
 		if searchText.isEmpty {
-			self.displayedUsers = self.allUsers
+			self.usersDataSource.displayedUsers = self.usersDataSource.allUsers
 		} else {
-			let filteredUsers = self.allUsers.filter { $0.name.contains(searchText) }
+			let filteredUsers = self.usersDataSource.allUsers.filter { $0.name.contains(searchText) }
 			if filteredUsers.isEmpty {
-				self.displayedUsers = self.allUsers.filter { $0.name.levenshteinDistanceScore(to: searchText) > 0.45 }
+				self.usersDataSource.displayedUsers = self.usersDataSource.allUsers.filter { $0.name.levenshteinDistanceScore(to: searchText) > 0.45 }
 			} else {
-				self.displayedUsers = filteredUsers
+				self.usersDataSource.displayedUsers = filteredUsers
 			}
 		}
 		self.userCollectionView.reloadData()
@@ -130,21 +128,5 @@ extension UsersAndTeamsViewController: UICollectionViewDelegateFlowLayout {
 	}
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 		return 0
-	}
-}
-extension UsersAndTeamsViewController: UICollectionViewDataSource {
-	func numberOfSections(in collectionView: UICollectionView) -> Int {
-		1
-	}
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		self.displayedUsers.count
-	}
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(UserCollectionViewCell.self)", for: indexPath) as? UserCollectionViewCell else {
-			fatalError("Incorrect cell class")
-		}
-		let user = self.displayedUsers[indexPath.row]
-		cell.userNameLabel.text = user.name
-		return cell
 	}
 }
