@@ -10,6 +10,11 @@ import UIKit
 
 class UsersAndTeamsViewController: UIViewController {
 	
+	// MARK: - IBOutlets
+	
+	@IBOutlet weak var usersTeamsSegmentedControl: UISegmentedControl!
+	@IBOutlet weak var dataViewContainer: UIView!
+	
 	// MARK: - Views
 	
 	lazy var viewModel = UsersAndTeamsViewModel()
@@ -34,9 +39,6 @@ class UsersAndTeamsViewController: UIViewController {
 	lazy var searchController = UISearchController(searchResultsController: nil).apply {
 		$0.obscuresBackgroundDuringPresentation = false
 		$0.searchResultsUpdater = self.viewModel
-		$0.searchBar.scopeButtonTitles = ["Athlets", "Teams"]
-		$0.searchBar.selectedScopeButtonIndex = 0
-		$0.searchBar.showsScopeBar = true
 		$0.searchBar.delegate = self
 	}
 	
@@ -66,6 +68,13 @@ class UsersAndTeamsViewController: UIViewController {
 	
 	@objc private func pulledToRefresh() {
 		self.viewModel.fetchUsers()
+	}
+	
+	@IBAction func usersTeamsSegmentedControlChanged(_ sender: UISegmentedControl) {
+		let index = sender.selectedSegmentIndex
+		self.title = tabs[index]
+		self.teamsTableView.isHidden = index == 0
+		self.userCollectionView.isHidden = index != 0
 	}
 	
 	// MARK: - Convenience
@@ -105,24 +114,20 @@ class UsersAndTeamsViewController: UIViewController {
 	
 	private func setupViews() {
 		
-		self.view.addSubview(self.userCollectionView)
+		self.dataViewContainer.addSubview(self.userCollectionView)
 		self.userCollectionView.snapToParent(self.view)
 		
-		self.view.addSubview(self.teamsTableView)
+		self.dataViewContainer.addSubview(self.teamsTableView)
 		self.teamsTableView.snapToParent(self.view)
+		
+		for (i, tab) in tabs.enumerated() {
+			self.usersTeamsSegmentedControl.setTitle(tab, forSegmentAt: i)
+		}
+		self.usersTeamsSegmentedControl.selectedSegmentIndex = 0
 		
 		self.title = tabs.first
 		self.navigationItem.searchController = self.searchController
 		self.definesPresentationContext = true
-	}
-}
-
-// MARK: - UISearchBarDelegate
-extension UsersAndTeamsViewController: UISearchBarDelegate {
-	func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-		self.title = tabs[selectedScope]
-		self.teamsTableView.isHidden = selectedScope == 0
-		self.userCollectionView.isHidden = selectedScope != 0
 	}
 }
 
