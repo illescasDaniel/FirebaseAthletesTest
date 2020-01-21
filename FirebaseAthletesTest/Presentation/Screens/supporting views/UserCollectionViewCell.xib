@@ -22,8 +22,9 @@
                             <view clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0uR-9s-E2A" customClass="RoundedView" customModule="FirebaseAthletesTest" customModuleProvider="target">
                                 <rect key="frame" x="16" y="18.5" width="40" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bId-ec-gqa">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bId-ec-gqa">
                                         <rect key="frame" x="-10.5" y="0.0" width="61.5" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <nil key="highlightedColor"/>
@@ -31,11 +32,8 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="bId-ec-gqa" secondAttribute="bottom" id="6Aa-7x-lLe"/>
                                     <constraint firstAttribute="width" constant="40" id="8ZE-w0-O7u"/>
-                                    <constraint firstItem="bId-ec-gqa" firstAttribute="centerX" secondItem="0uR-9s-E2A" secondAttribute="centerX" id="9d0-Jm-yBO"/>
                                     <constraint firstAttribute="width" secondItem="0uR-9s-E2A" secondAttribute="height" multiplier="1:1" id="D2T-4R-acm"/>
-                                    <constraint firstItem="bId-ec-gqa" firstAttribute="top" secondItem="0uR-9s-E2A" secondAttribute="top" id="KX5-BT-cZr"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0i-0V-UHd">

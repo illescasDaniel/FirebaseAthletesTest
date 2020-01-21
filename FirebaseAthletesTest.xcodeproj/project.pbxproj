@@ -30,6 +30,7 @@
 		65738DB823D65BEF008EEF24 /* UsersAndTeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DB723D65BEF008EEF24 /* UsersAndTeamsViewModel.swift */; };
 		65738DBA23D77E3B008EEF24 /* SimpleEmptyStateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DB923D77E3B008EEF24 /* SimpleEmptyStateLabel.swift */; };
 		65738DBC23D7804C008EEF24 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DBB23D7804C008EEF24 /* RoundedView.swift */; };
+		65738DBE23D78757008EEF24 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DBD23D78757008EEF24 /* UserDetailViewController.swift */; };
 		881C0387B53CB04B3B7FD074 /* Pods_FirebaseAthletesTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08279C0FDDA03292E70B48C /* Pods_FirebaseAthletesTestTests.framework */; };
 		CEA59B5D2CE42011F926B03D /* Pods_FirebaseAthletesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4B045C1E82B15D6A1789674 /* Pods_FirebaseAthletesTest.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		65738DB723D65BEF008EEF24 /* UsersAndTeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersAndTeamsViewModel.swift; sourceTree = "<group>"; };
 		65738DB923D77E3B008EEF24 /* SimpleEmptyStateLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleEmptyStateLabel.swift; sourceTree = "<group>"; };
 		65738DBB23D7804C008EEF24 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		65738DBD23D78757008EEF24 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		AF8DF85B56302D67B12FBF65 /* Pods-FirebaseAthletesTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAthletesTestTests.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseAthletesTestTests/Pods-FirebaseAthletesTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B08279C0FDDA03292E70B48C /* Pods_FirebaseAthletesTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseAthletesTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36483CE0E7D1EB47D43D35B /* Pods-FirebaseAthletesTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAthletesTest.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseAthletesTest/Pods-FirebaseAthletesTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 		65738DA923D64D56008EEF24 /* UserDetail */ = {
 			isa = PBXGroup;
 			children = (
+				65738DBD23D78757008EEF24 /* UserDetailViewController.swift */,
 			);
 			path = UserDetail;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 			files = (
 				65738DBA23D77E3B008EEF24 /* SimpleEmptyStateLabel.swift in Sources */,
 				65738DAC23D64DA7008EEF24 /* UserFirebaseDataSource.swift in Sources */,
+				65738DBE23D78757008EEF24 /* UserDetailViewController.swift in Sources */,
 				65738DA223D63EC6008EEF24 /* UsersAndTeamsViewController.swift in Sources */,
 				65738DAF23D64DC7008EEF24 /* UserRepository.swift in Sources */,
 				656AC71923D61DEE004C28E7 /* FirebaseModel.swift in Sources */,

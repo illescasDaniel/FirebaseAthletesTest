@@ -43,14 +43,7 @@ extension UsersDataSource: UICollectionViewDataSource {
 		let user = self.displayedUsers[indexPath.row]
 		cell.userNameLabel.text = user.name
 		
-		var initials = ""
-		if let firstNameLetter = user.name.first {
-			initials += String(firstNameLetter)
-		}
-		if let firstSurnameLetter = user.surname.first {
-			initials += String(firstSurnameLetter)
-		}
-		cell.userNameInitialsLabel.text = initials
+		cell.userNameInitialsLabel.text = user.initials
 		return cell
 	}
 }

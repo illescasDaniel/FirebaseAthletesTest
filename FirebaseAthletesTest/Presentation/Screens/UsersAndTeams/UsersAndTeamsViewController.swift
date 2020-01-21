@@ -120,6 +120,24 @@ class UsersAndTeamsViewController: UIViewController {
 		
 		self.title = tabs.first
 	}
+	
+	//
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		guard segue.identifier == UserDetailViewController.segueId else { return }
+		guard let controller = segue.destination as? UserDetailViewController else { return }
+		controller.user = sender as? User
+	}
+}
+
+// MARK: - UICollectionViewDelegate
+extension UsersAndTeamsViewController: UICollectionViewDelegate {
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		performSegue(
+			withIdentifier: UserDetailViewController.segueId,
+			sender: self.viewModel.usersDataSource.displayedUsers[indexPath.row]
+		)
+	}
 }
 
 // MARK: - UISearchBarControllerDelegate

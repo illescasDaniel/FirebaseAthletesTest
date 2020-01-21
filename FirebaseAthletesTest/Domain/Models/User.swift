@@ -38,3 +38,21 @@ struct User: FirebaseModel {
 		case name, surname, sport, weights
 	}
 }
+
+
+extension User {
+	var initials: String {
+		var initialsString = ""
+		if let firstNameLetter = self.name.first {
+			initialsString += String(firstNameLetter)
+		}
+		if let firstSurnameLetter = self.surname.first {
+			initialsString += String(firstSurnameLetter)
+		}
+		return initialsString
+	}
+	
+	var fullName: String {
+		return "\(self.name) \(self.surname)"
+	}
+}

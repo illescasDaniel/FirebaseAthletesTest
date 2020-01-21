@@ -56,11 +56,41 @@
                         <outlet property="dataViewContainer" destination="rtC-NH-rc8" id="Q7T-Gv-6BA"/>
                         <outlet property="searchBar" destination="Nab-Zo-6fg" id="hD0-lk-Yb4"/>
                         <outlet property="usersTeamsSegmentedControl" destination="NKw-MY-cO6" id="I7G-iB-yGq"/>
+                        <segue destination="66T-Kw-X76" kind="show" identifier="showUserDetail" id="pAr-lx-PBI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+        </scene>
+        <!--User Detail View Controller-->
+        <scene sceneID="8fX-Hd-Va6">
+            <objects>
+                <viewController id="66T-Kw-X76" customClass="UserDetailViewController" customModule="FirebaseAthletesTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JPz-q5-xx8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plz-gP-lbY">
+                                <rect key="frame" x="16" y="156" width="382" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="vuM-sO-RH3" firstAttribute="trailing" secondItem="Plz-gP-lbY" secondAttribute="trailing" constant="16" id="6ff-OM-MwS"/>
+                            <constraint firstItem="Plz-gP-lbY" firstAttribute="top" secondItem="vuM-sO-RH3" secondAttribute="top" constant="16" id="Q9v-g1-Xh4"/>
+                            <constraint firstItem="Plz-gP-lbY" firstAttribute="leading" secondItem="vuM-sO-RH3" secondAttribute="leading" constant="16" id="QBT-rB-3Av"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vuM-sO-RH3"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="t6R-KJ-BYM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cn7-D2-nCx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1952.1739130434785" y="130.58035714285714"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bYt-d6-g8g">
