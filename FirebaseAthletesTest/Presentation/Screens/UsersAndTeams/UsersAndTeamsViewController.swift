@@ -14,6 +14,7 @@ class UsersAndTeamsViewController: UIViewController {
 	
 	@IBOutlet weak var usersTeamsSegmentedControl: UISegmentedControl!
 	@IBOutlet weak var dataViewContainer: UIView!
+	@IBOutlet weak var searchBar: UISearchBar!
 	
 	// MARK: - Views
 	
@@ -36,12 +37,6 @@ class UsersAndTeamsViewController: UIViewController {
 		$0.isHidden = true
 	}
 	
-	lazy var searchController = UISearchController(searchResultsController: nil).apply {
-		$0.obscuresBackgroundDuringPresentation = false
-		$0.searchResultsUpdater = self.viewModel
-		$0.searchBar.delegate = self
-	}
-	
 	lazy var activityIndicator: UIActivityIndicatorView? = UIActivityIndicatorView(style: .medium)
 	
 	lazy var refreshIndicator = UIRefreshControl().apply {
@@ -54,13 +49,12 @@ class UsersAndTeamsViewController: UIViewController {
 		"Athletes", "Teams"
 	]}
 	
-	
 	// MARK: - Life cycle
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.setupViews()
 		self.setupUserListStateObserver()
+		self.setupViews()
 		self.viewModel.fetchUsers()
 	}
 	
@@ -98,12 +92,8 @@ class UsersAndTeamsViewController: UIViewController {
 				self.userCollectionView.reloadData()
 			case .performedSearch(let emptyResult):
 				if emptyResult {
-					if self.userCollectionView.backgroundView == self.activityIndicator {
-						let emptyStateLabel = UILabel()
-						emptyStateLabel.text = "No results"
-						emptyStateLabel.textAlignment = .center
-						self.userCollectionView.backgroundView = emptyStateLabel
-					}
+					self.userCollectionView.backgroundView = SimpleEmptyStateLabel.create()
+					self.userCollectionView.backgroundView?.isHidden = false
 				} else {
 					self.userCollectionView.backgroundView?.isHidden = true
 				}
@@ -114,11 +104,14 @@ class UsersAndTeamsViewController: UIViewController {
 	
 	private func setupViews() {
 		
+		self.searchBar.placeholder = "Search"
+		self.searchBar.delegate = self
+		
 		self.dataViewContainer.addSubview(self.userCollectionView)
-		self.userCollectionView.snapToParent(self.view)
+		self.userCollectionView.snapToParent(self.dataViewContainer)
 		
 		self.dataViewContainer.addSubview(self.teamsTableView)
-		self.teamsTableView.snapToParent(self.view)
+		self.teamsTableView.snapToParent(self.dataViewContainer)
 		
 		for (i, tab) in tabs.enumerated() {
 			self.usersTeamsSegmentedControl.setTitle(tab, forSegmentAt: i)
@@ -126,8 +119,19 @@ class UsersAndTeamsViewController: UIViewController {
 		self.usersTeamsSegmentedControl.selectedSegmentIndex = 0
 		
 		self.title = tabs.first
-		self.navigationItem.searchController = self.searchController
-		self.definesPresentationContext = true
+	}
+}
+
+// MARK: - UISearchBarControllerDelegate
+extension UsersAndTeamsViewController: UISearchBarDelegate {
+	func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+		if searchText.isEmpty {
+			self.view.endEditing(true)
+		}
+		self.viewModel.filterUsersList(withText: searchText)
+	}
+	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+		self.view.endEditing(true)
 	}
 }
 

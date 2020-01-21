@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NKw-MY-cO6">
-                                <rect key="frame" x="16" y="156" width="382" height="31"/>
+                                <rect key="frame" x="16" y="140" width="382" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="qd4-zk-d5r"/>
                                 </constraints>
@@ -28,26 +28,33 @@
                                     <action selector="usersTeamsSegmentedControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="EP6-wS-g7w"/>
                                 </connections>
                             </segmentedControl>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Nab-Zo-6fg">
+                                <rect key="frame" x="8" y="178" width="398" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtC-NH-rc8">
-                                <rect key="frame" x="0.0" y="202" width="414" height="660"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <rect key="frame" x="0.0" y="242" width="414" height="654"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="rtC-NH-rc8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0VS-ak-kaL"/>
-                            <constraint firstItem="NKw-MY-cO6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="0dG-Wv-lkm"/>
+                            <constraint firstItem="NKw-MY-cO6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0dG-Wv-lkm"/>
                             <constraint firstItem="rtC-NH-rc8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="38y-jo-FJL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NKw-MY-cO6" secondAttribute="trailing" constant="16" id="A04-BG-pop"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rtC-NH-rc8" secondAttribute="bottom" id="P9w-fI-7Iv"/>
+                            <constraint firstItem="Nab-Zo-6fg" firstAttribute="top" secondItem="NKw-MY-cO6" secondAttribute="bottom" constant="8" id="HE5-E1-pzZ"/>
+                            <constraint firstAttribute="bottom" secondItem="rtC-NH-rc8" secondAttribute="bottom" id="P9w-fI-7Iv"/>
                             <constraint firstItem="NKw-MY-cO6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dN6-K6-XRI"/>
-                            <constraint firstItem="rtC-NH-rc8" firstAttribute="top" secondItem="NKw-MY-cO6" secondAttribute="bottom" constant="16" id="xZd-g0-LN9"/>
+                            <constraint firstItem="Nab-Zo-6fg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="hcI-x1-qcq"/>
+                            <constraint firstItem="Nab-Zo-6fg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-8" id="ppL-DZ-HOq"/>
+                            <constraint firstItem="rtC-NH-rc8" firstAttribute="top" secondItem="Nab-Zo-6fg" secondAttribute="bottom" constant="8" id="vK8-xJ-gpY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="o8I-KA-WPh"/>
                     <connections>
                         <outlet property="dataViewContainer" destination="rtC-NH-rc8" id="Q7T-Gv-6BA"/>
+                        <outlet property="searchBar" destination="Nab-Zo-6fg" id="hD0-lk-Yb4"/>
                         <outlet property="usersTeamsSegmentedControl" destination="NKw-MY-cO6" id="I7G-iB-yGq"/>
                     </connections>
                 </viewController>

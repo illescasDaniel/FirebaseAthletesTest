@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class UsersAndTeamsViewModel: NSObject {
+class UsersAndTeamsViewModel {
 	
 	// MARK: Properties
 	let usersDataSource = UsersDataSource()
@@ -63,12 +63,5 @@ extension UsersAndTeamsViewModel {
 		case loading
 		case loaded
 		case performedSearch(emptyResult: Bool)
-	}
-}
-
-// MARK: UISearchResultsUpdating
-extension UsersAndTeamsViewModel: UISearchResultsUpdating {
-	func updateSearchResults(for searchController: UISearchController) {
-		self.filterUsersList(withText: searchController.searchBar.text ?? "")
 	}
 }
