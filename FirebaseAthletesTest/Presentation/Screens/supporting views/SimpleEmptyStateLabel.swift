@@ -10,18 +10,18 @@ import UIKit
 
 class SimpleEmptyStateLabel: UIView {
 	static func create() -> SimpleEmptyStateLabel {
-		let emptyStateView = SimpleEmptyStateLabel()
-		let emptyStateLabel = UILabel()
-		emptyStateLabel.text = "No results"
-		emptyStateLabel.textAlignment = .center
-		emptyStateView.addSubview(emptyStateLabel)
-		emptyStateLabel.translatesAutoresizingMaskIntoConstraints = false
-		NSLayoutConstraint.activate([
-			emptyStateLabel.topAnchor.constraint(equalTo: emptyStateView.topAnchor, constant: 20),
-			emptyStateLabel.leadingAnchor.constraint(equalTo: emptyStateView.leadingAnchor, constant: 16),
-			emptyStateLabel.trailingAnchor.constraint(equalTo: emptyStateView.trailingAnchor, constant: -16),
-			emptyStateLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 100)
-		])
-		return emptyStateView
+		SimpleEmptyStateLabel().apply {
+			let emptyStateLabel = UILabel()
+			emptyStateLabel.text = "No results"
+			emptyStateLabel.textAlignment = .center
+			$0.addSubview(emptyStateLabel)
+			emptyStateLabel.translatesAutoresizingMaskIntoConstraints = false
+			NSLayoutConstraint.activate([
+				emptyStateLabel.topAnchor.constraint(equalTo: $0.topAnchor, constant: 20),
+				emptyStateLabel.leadingAnchor.constraint(equalTo: $0.leadingAnchor, constant: 16),
+				emptyStateLabel.trailingAnchor.constraint(equalTo: $0.trailingAnchor, constant: -16),
+				emptyStateLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 100)
+			])
+		}
 	}
 }

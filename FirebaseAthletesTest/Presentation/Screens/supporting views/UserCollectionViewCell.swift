@@ -11,11 +11,14 @@ import UIKit
 class UserCollectionViewCell: UICollectionViewCell {
 	
 	@IBOutlet private weak var containerView: UIView!
+	@IBOutlet private weak var userNameAvatarContainer: RoundedView!
+	@IBOutlet weak var userNameInitialsLabel: UILabel!
 	@IBOutlet weak var userNameLabel: UILabel!
 	
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		containerView.layer.cornerRadius = 8
+		userNameInitialsLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 20, weight: .bold)
 	}
 	
 }

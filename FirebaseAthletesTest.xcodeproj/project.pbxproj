@@ -29,6 +29,7 @@
 		65738DB423D65557008EEF24 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DB323D65557008EEF24 /* UIView+constraints.swift */; };
 		65738DB823D65BEF008EEF24 /* UsersAndTeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DB723D65BEF008EEF24 /* UsersAndTeamsViewModel.swift */; };
 		65738DBA23D77E3B008EEF24 /* SimpleEmptyStateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DB923D77E3B008EEF24 /* SimpleEmptyStateLabel.swift */; };
+		65738DBC23D7804C008EEF24 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DBB23D7804C008EEF24 /* RoundedView.swift */; };
 		881C0387B53CB04B3B7FD074 /* Pods_FirebaseAthletesTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08279C0FDDA03292E70B48C /* Pods_FirebaseAthletesTestTests.framework */; };
 		CEA59B5D2CE42011F926B03D /* Pods_FirebaseAthletesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4B045C1E82B15D6A1789674 /* Pods_FirebaseAthletesTest.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		65738DB323D65557008EEF24 /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
 		65738DB723D65BEF008EEF24 /* UsersAndTeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersAndTeamsViewModel.swift; sourceTree = "<group>"; };
 		65738DB923D77E3B008EEF24 /* SimpleEmptyStateLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleEmptyStateLabel.swift; sourceTree = "<group>"; };
+		65738DBB23D7804C008EEF24 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		AF8DF85B56302D67B12FBF65 /* Pods-FirebaseAthletesTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAthletesTestTests.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseAthletesTestTests/Pods-FirebaseAthletesTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B08279C0FDDA03292E70B48C /* Pods_FirebaseAthletesTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseAthletesTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36483CE0E7D1EB47D43D35B /* Pods-FirebaseAthletesTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAthletesTest.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseAthletesTest/Pods-FirebaseAthletesTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				656AC72523D631A6004C28E7 /* UserCollectionViewCell.swift */,
 				656AC72623D631A6004C28E7 /* UserCollectionViewCell.xib */,
 				65738DB923D77E3B008EEF24 /* SimpleEmptyStateLabel.swift */,
+				65738DBB23D7804C008EEF24 /* RoundedView.swift */,
 			);
 			path = "supporting views";
 			sourceTree = "<group>";
@@ -300,7 +303,6 @@
 				656AC6EC23D61610004C28E7 /* Frameworks */,
 				656AC6ED23D61610004C28E7 /* Resources */,
 				6247B302CF63FAD6B9EFF540 /* [CP] Embed Pods Frameworks */,
-				656AC72A23D632E7004C28E7 /* Cocoapods sucks */,
 			);
 			buildRules = (
 			);
@@ -430,24 +432,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirebaseAthletesTest/Pods-FirebaseAthletesTest-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		656AC72A23D632E7004C28E7 /* Cocoapods sucks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Cocoapods sucks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# https://forums.developer.apple.com/thread/46223\nfunction removeHeaders() {  \n    find $BUILD_ROOT/  -name '*.h' -exec rm -f {} \\; \n}  \nremoveHeaders\n";
-		};
 		DFDADF2C345B0A0D89441A07 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,6 +472,7 @@
 				65738DB423D65557008EEF24 /* UIView+constraints.swift in Sources */,
 				65738DA423D63F38008EEF24 /* UsersDataSource.swift in Sources */,
 				656AC71E23D6236F004C28E7 /* UserList.swift in Sources */,
+				65738DBC23D7804C008EEF24 /* RoundedView.swift in Sources */,
 				65738DB223D6552F008EEF24 /* ApplyProtocol.swift in Sources */,
 				656AC72723D631A6004C28E7 /* UserCollectionViewCell.swift in Sources */,
 				656AC72023D62CCE004C28E7 /* Firebase+extension.swift in Sources */,
