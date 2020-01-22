@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FirebaseAthletesTest (English).xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>20</integer>
+		</dict>
+		<key>FirebaseAthletesTest (Spanish).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>19</integer>
+		</dict>
 		<key>FirebaseAthletesTest.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>

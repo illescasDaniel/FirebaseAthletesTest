@@ -12,7 +12,7 @@ class SimpleEmptyStateLabel: UIView {
 	static func create() -> SimpleEmptyStateLabel {
 		SimpleEmptyStateLabel().apply {
 			let emptyStateLabel = UILabel()
-			emptyStateLabel.text = "No results"
+			emptyStateLabel.text = NSLocalizedString("SimpleEmptyState.noResults", comment: "Empty state no results")
 			emptyStateLabel.textAlignment = .center
 			$0.addSubview(emptyStateLabel)
 			emptyStateLabel.translatesAutoresizingMaskIntoConstraints = false

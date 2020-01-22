@@ -73,12 +73,14 @@ class UserDetailViewController: UIViewController {
 	}
 	
 	private func fillSportLabel() {
-		let attributedSportText = NSMutableAttributedString(string: "Sport" + "\n", attributes: [
+		let sportLabelText = NSLocalizedString("UserDetail.sportLabel", comment: "User detail screen, sport label") + "\n"
+		let attributedSportText = NSMutableAttributedString(string: sportLabelText, attributes: [
 			.font: UIFont.boldSystemFont(ofSize: 24)
 		])
-		let sportName = viewModel.user.sport?.rawValue ?? "unknown"
+		let unknownSport = NSLocalizedString("UserDetail.unknownSportLabel", comment: "User detail screen, unknown sport label")
+		let sportName = viewModel.user.sport?.localized ?? unknownSport
 		attributedSportText.append(NSAttributedString(
-			string: " \(sportName.first!.uppercased() + sportName.dropFirst().lowercased())\(self.viewModel.userSportEmoji())",
+			string: "\(sportName)\(self.viewModel.userSportEmoji())",
 			attributes: [
 				.font: UIFont.systemFont(ofSize: 20)
 			])

@@ -46,7 +46,14 @@ class UsersAndTeamsViewController: UIViewController {
 	// MARK: Properties
 	
 	private var tabs: [String] {[
-		"Athletes", "Teams"
+		NSLocalizedString(
+			"UsersAndTeams.athletesTab",
+			comment: "Users and teams screen, athletes tab"
+		),
+		NSLocalizedString(
+			"UsersAndTeams.teamsTab",
+			comment: "Users and teams screen, athletes tab"
+		)
 	]}
 	
 	// MARK: - Life cycle
@@ -104,7 +111,10 @@ class UsersAndTeamsViewController: UIViewController {
 	
 	private func setupViews() {
 		
-		self.searchBar.placeholder = "Search"
+		self.searchBar.placeholder = NSLocalizedString(
+			"UsersAndTeams.searchPlaceholder",
+			comment: "Users and teams screen, search searchbar placeholder"
+		)
 		self.searchBar.delegate = self
 		
 		self.dataViewContainer.addSubview(self.userCollectionView)
