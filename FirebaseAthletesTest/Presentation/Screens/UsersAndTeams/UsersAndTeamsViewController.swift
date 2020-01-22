@@ -135,8 +135,20 @@ class UsersAndTeamsViewController: UIViewController {
 	//
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		guard segue.identifier == UserDetailViewController.segueId else { return }
-		guard let controller = segue.destination as? UserDetailViewController else { return }
+		guard segue.identifier == UserDetailViewController.segueId else {
+			log.error(
+				"Trying to performSegue to other than \(UserDetailViewController.segueId)",
+				context: ["segue id": segue.identifier ?? "nil"]
+			)
+			return
+		}
+		guard let controller = segue.destination as? UserDetailViewController else {
+			log.error(
+				"Segue destination is not \(UserDetailViewController.self)",
+				context: ["segue destination": "\(segue.destination)"]
+			)
+			return
+		}
 		controller.viewModel.user = sender as? User
 	}
 }

@@ -9,6 +9,7 @@
 import Foundation
 
 extension String {
+	// https://stackoverflow.com/a/48976605/6303785 - Daniel Illescas Romero (me)
     func levenshteinDistanceScore(to string: String, ignoreCase: Bool = true, trimWhiteSpacesAndNewLines: Bool = true) -> Float {
 
         var firstString = self

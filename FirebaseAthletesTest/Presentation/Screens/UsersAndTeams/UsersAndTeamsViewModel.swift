@@ -16,6 +16,7 @@ class UsersAndTeamsViewModel {
 	var userListStateObserver: (UsersListState) -> Void = {_ in }
 	private(set) var userListState: UsersListState = .idle {
 		didSet {
+			log.verbose("User list state: \(self.userListState)")
 			self.userListStateObserver(self.userListState)
 		}
 	}

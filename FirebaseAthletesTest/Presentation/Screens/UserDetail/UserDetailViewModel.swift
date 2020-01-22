@@ -33,6 +33,7 @@ class UserDetailViewModel {
 		case .baseball: return " ⚾️"
 		case .rugby: return " 🏉"
 		default:
+			log.warning("Found unknown sport")
 			return ""
 		}
 	}

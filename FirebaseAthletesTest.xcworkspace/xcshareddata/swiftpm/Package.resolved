@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BetterLogger",
+        "repositoryURL": "https://github.com/illescasDaniel/BetterLogger.git",
+        "state": {
+          "branch": null,
+          "revision": "fabef9973eec6fd2b73a2910e1b93dafa82a7406",
+          "version": "1.2.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

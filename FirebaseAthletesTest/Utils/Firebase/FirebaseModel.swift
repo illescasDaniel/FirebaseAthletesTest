@@ -32,8 +32,13 @@ protocol FirebaseEncodable: Encodable {
 extension FirebaseEncodable {
 	typealias k = Self.CodingKeys
 	var propertiesDictionary: [String: Any] {
-		guard let data = try? JSONEncoder().encode(self) else { return [:] }
-		return ((try? JSONSerialization.jsonObject(with: data)) as? [String: Any]) ?? [:]
+		do {
+			let data = try JSONEncoder().encode(self)
+			return (try JSONSerialization.jsonObject(with: data) as? [String: Any]) ?? [:]
+		} catch {
+			log.error(error)
+			return [:]
+		}
 	}
 }
 
@@ -43,6 +48,5 @@ protocol FirebaseCodable: FirebaseDecodable, FirebaseEncodable {
 extension FirebaseCodable {
 	static var childKey: String { "\(Self.self)".lowercased() }
 }
-
 
 protocol FirebaseModel: FirebaseCodable {}

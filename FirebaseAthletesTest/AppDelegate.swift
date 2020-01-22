@@ -8,6 +8,9 @@
 
 import UIKit
 import Firebase
+import BetterLogger
+
+var log: BetterLogger { .default }
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

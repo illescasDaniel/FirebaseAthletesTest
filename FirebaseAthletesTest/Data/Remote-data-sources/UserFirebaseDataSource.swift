@@ -29,8 +29,10 @@ struct UserFirebaseDataSource {
 		if let limit = limit {
 			query = query.queryLimited(toFirst: limit)
 		}
-		query.observeSingleEvent(of: .value) { (snapshot) in
+		query.observeSingleEvent(of: .value, with: { (snapshot) in
 			completionHandler(snapshot)
+		}) { (error) in
+			log.error(error)
 		}
 	}
 	

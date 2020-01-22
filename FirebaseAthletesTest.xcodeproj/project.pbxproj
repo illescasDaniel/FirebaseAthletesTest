@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,6 +38,7 @@
 		65738DCA23D8BAD6008EEF24 /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DC723D8BAD6008EEF24 /* ChartColors.swift */; };
 		65738DCC23D8CA44008EEF24 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DCB23D8CA44008EEF24 /* UserDetailViewModel.swift */; };
 		65738DD023D8D011008EEF24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65738DD223D8D011008EEF24 /* Localizable.strings */; };
+		65738DD623D8D284008EEF24 /* BetterLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 65738DD523D8D284008EEF24 /* BetterLogger */; };
 		881C0387B53CB04B3B7FD074 /* Pods_FirebaseAthletesTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08279C0FDDA03292E70B48C /* Pods_FirebaseAthletesTestTests.framework */; };
 		CEA59B5D2CE42011F926B03D /* Pods_FirebaseAthletesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4B045C1E82B15D6A1789674 /* Pods_FirebaseAthletesTest.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65738DD623D8D284008EEF24 /* BetterLogger in Frameworks */,
 				CEA59B5D2CE42011F926B03D /* Pods_FirebaseAthletesTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +360,9 @@
 			dependencies = (
 			);
 			name = FirebaseAthletesTest;
+			packageProductDependencies = (
+				65738DD523D8D284008EEF24 /* BetterLogger */,
+			);
 			productName = FirebaseAthletesTest;
 			productReference = 656AC6EF23D61610004C28E7 /* FirebaseAthletesTest.app */;
 			productType = "com.apple.product-type.application";
@@ -410,6 +415,9 @@
 				es,
 			);
 			mainGroup = 656AC6E623D61610004C28E7;
+			packageReferences = (
+				65738DD423D8D284008EEF24 /* XCRemoteSwiftPackageReference "BetterLogger" */,
+			);
 			productRefGroup = 656AC6F023D61610004C28E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -817,6 +825,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		65738DD423D8D284008EEF24 /* XCRemoteSwiftPackageReference "BetterLogger" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/illescasDaniel/BetterLogger.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		65738DD523D8D284008EEF24 /* BetterLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65738DD423D8D284008EEF24 /* XCRemoteSwiftPackageReference "BetterLogger" */;
+			productName = BetterLogger;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 656AC6E723D61610004C28E7 /* Project object */;
 }
