@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6jc-9h-bDc">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,11 +12,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="UsersAndTeamsViewController" customModule="FirebaseAthletesTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NKw-MY-cO6">
-                                <rect key="frame" x="16" y="140" width="382" height="31"/>
+                                <rect key="frame" x="16" y="140" width="343" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="qd4-zk-d5r"/>
                                 </constraints>
@@ -29,11 +29,11 @@
                                 </connections>
                             </segmentedControl>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Nab-Zo-6fg">
-                                <rect key="frame" x="8" y="178" width="398" height="56"/>
+                                <rect key="frame" x="8" y="178" width="0.0" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtC-NH-rc8">
-                                <rect key="frame" x="0.0" y="242" width="414" height="654"/>
+                                <rect key="frame" x="0.0" y="242" width="375" height="570"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -68,29 +68,80 @@
             <objects>
                 <viewController id="66T-Kw-X76" customClass="UserDetailViewController" customModule="FirebaseAthletesTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JPz-q5-xx8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plz-gP-lbY">
-                                <rect key="frame" x="16" y="156" width="382" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plz-gP-lbY">
+                                <rect key="frame" x="16" y="180" width="343" height="20.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="1Hj-rC-rvH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1Hj-rC-rvH"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1Hj-rC-rvH"/>
+                                    </mask>
+                                </variation>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qwF-Or-RdV">
+                                <rect key="frame" x="16" y="413" width="343" height="325"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="750" constant="325" id="OFv-Wf-uBy"/>
+                                </constraints>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="OFv-Wf-uBy"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="vuM-sO-RH3" firstAttribute="trailing" secondItem="Plz-gP-lbY" secondAttribute="trailing" constant="16" id="6ff-OM-MwS"/>
-                            <constraint firstItem="Plz-gP-lbY" firstAttribute="top" secondItem="vuM-sO-RH3" secondAttribute="top" constant="16" id="Q9v-g1-Xh4"/>
+                            <constraint firstItem="qwF-Or-RdV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Plz-gP-lbY" secondAttribute="bottom" constant="60" id="8pt-S9-OHb"/>
+                            <constraint firstItem="qwF-Or-RdV" firstAttribute="leading" secondItem="vuM-sO-RH3" secondAttribute="leading" constant="16" id="Atv-ug-ddP"/>
+                            <constraint firstItem="Plz-gP-lbY" firstAttribute="top" secondItem="vuM-sO-RH3" secondAttribute="top" constant="40" id="Q9v-g1-Xh4"/>
                             <constraint firstItem="Plz-gP-lbY" firstAttribute="leading" secondItem="vuM-sO-RH3" secondAttribute="leading" constant="16" id="QBT-rB-3Av"/>
+                            <constraint firstItem="qwF-Or-RdV" firstAttribute="top" secondItem="Plz-gP-lbY" secondAttribute="bottom" constant="8" id="auZ-2Q-J0r"/>
+                            <constraint firstItem="vuM-sO-RH3" firstAttribute="trailing" secondItem="qwF-Or-RdV" secondAttribute="trailing" constant="16" id="nYN-4R-ros"/>
+                            <constraint firstItem="qwF-Or-RdV" firstAttribute="bottom" secondItem="vuM-sO-RH3" secondAttribute="bottom" constant="-40" id="o0F-pD-iOx">
+                                <variation key="heightClass=compact-widthClass=compact" constant="-16"/>
+                            </constraint>
+                            <constraint firstItem="vuM-sO-RH3" firstAttribute="top" secondItem="Plz-gP-lbY" secondAttribute="top" constant="-4" id="zss-xr-VYN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vuM-sO-RH3"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="zss-xr-VYN"/>
+                                <exclude reference="auZ-2Q-J0r"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="zss-xr-VYN"/>
+                                <exclude reference="Q9v-g1-Xh4"/>
+                                <include reference="auZ-2Q-J0r"/>
+                                <exclude reference="8pt-S9-OHb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="t6R-KJ-BYM"/>
+                    <connections>
+                        <outlet property="chartViewContainer" destination="qwF-Or-RdV" id="k2j-gd-HCZ"/>
+                        <outlet property="sportLabel" destination="Plz-gP-lbY" id="opW-93-7aG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cn7-D2-nCx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952.1739130434785" y="130.58035714285714"/>
+            <point key="canvasLocation" x="1951.4778325123154" y="130.40000000000001"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bYt-d6-g8g">
@@ -98,7 +149,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6jc-9h-bDc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="ebs-xk-s02">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -21,7 +21,7 @@ class UsersAndTeamsViewController: UIViewController {
 	lazy var viewModel = UsersAndTeamsViewModel()
 	
 	lazy var userCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).apply {
-		$0.backgroundColor = .systemGroupedBackground
+		$0.backgroundColor = .systemGray6
 		$0.register(
 			UINib(nibName: "\(UserCollectionViewCell.self)", bundle: .main),
 			forCellWithReuseIdentifier: "\(UserCollectionViewCell.self)"
@@ -33,7 +33,7 @@ class UsersAndTeamsViewController: UIViewController {
 	}
 	
 	lazy var teamsTableView = UITableView(frame: .zero, style: .plain).apply {
-		$0.backgroundColor = .systemGroupedBackground
+		$0.backgroundColor = .systemGray6
 		$0.isHidden = true
 	}
 	
@@ -119,6 +119,7 @@ class UsersAndTeamsViewController: UIViewController {
 		self.usersTeamsSegmentedControl.selectedSegmentIndex = 0
 		
 		self.title = tabs.first
+		self.view.backgroundColor = .systemGray6
 	}
 	
 	//
@@ -155,8 +156,13 @@ extension UsersAndTeamsViewController: UISearchBarDelegate {
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension UsersAndTeamsViewController: UICollectionViewDelegateFlowLayout {
+	
+	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
+		userCollectionView.reloadData()
+	}
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		return CGSize(width: self.view.bounds.width, height: 100)
+		return CGSize(width: self.view.frame.width - self.view.safeAreaInsets.left - self.view.safeAreaInsets.right, height: 100)
 	}
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
 		return 0

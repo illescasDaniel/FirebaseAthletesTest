@@ -7,6 +7,7 @@ target 'FirebaseAthletesTest' do
 
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
+	# pod "SwiftChart" - Since "kCALineJoinBevel" is deprecated, I need to manually import the framework...
 
   target 'FirebaseAthletesTestTests' do
     inherit! :search_paths
