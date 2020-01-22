@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User: FirebaseModel {
+struct User: Equatable {
 	
 	static var childKey: String { "users" }
 	
@@ -16,6 +16,40 @@ struct User: FirebaseModel {
 	let surname: String
 	let sport: Sport?
 	let weights: [Date: Float]
+	
+	init(
+		name: String,
+		surname: String,
+		sport: Sport?,
+		weights: [Date: Float]
+	) {
+		self.name = name
+		self.surname = surname
+		self.sport = sport
+		self.weights = weights
+	}
+}
+
+extension User {
+	var initials: String {
+		var initialsString = ""
+		if let firstNameLetter = self.name.first {
+			initialsString += String(firstNameLetter)
+		}
+		if let firstSurnameLetter = self.surname.first {
+			initialsString += String(firstSurnameLetter)
+		}
+		return initialsString
+	}
+	
+	var fullName: String {
+		return "\(self.name) \(self.surname)"
+	}
+}
+
+//
+
+extension User: FirebaseModel {
 	
 	init(from decoder: Decoder) throws {
 		let container = try decoder.container(keyedBy: CodingKeys.self)
@@ -34,25 +68,21 @@ struct User: FirebaseModel {
 		}, uniquingKeysWith: { $1 })
 	}
 	
-	enum CodingKeys: String, FirebaseCodingKeys {
-		case name, surname, sport, weights
-	}
-}
-
-
-extension User {
-	var initials: String {
-		var initialsString = ""
-		if let firstNameLetter = self.name.first {
-			initialsString += String(firstNameLetter)
-		}
-		if let firstSurnameLetter = self.surname.first {
-			initialsString += String(firstSurnameLetter)
-		}
-		return initialsString
+	func encode(to encoder: Encoder) throws {
+		var container = encoder.container(keyedBy: CodingKeys.self)
+		try container.encode(self.name, forKey: .name)
+		try container.encode(self.surname, forKey: .surname)
+		try container.encode(self.sport, forKey: .sport)
+		let originalWeights = [String: Float](self.weights.map { (keyValue) -> (String, Float) in
+			let (key, value) = keyValue
+			let dateFormatter = DateFormatter()
+			dateFormatter.dateFormat = "yyyy-MM-dd"
+			return (dateFormatter.string(from: key), value)
+		}, uniquingKeysWith: { $1 })
+		try container.encode(originalWeights, forKey: .weights)
 	}
 	
-	var fullName: String {
-		return "\(self.name) \(self.surname)"
+	enum CodingKeys: String, FirebaseCodingKeys {
+		case name, surname, sport, weights
 	}
 }

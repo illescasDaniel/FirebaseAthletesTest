@@ -20,7 +20,7 @@ struct UserFirebaseDataSource {
 	func users(
 		orderedByChild child: String? = nil,
 		limit: UInt? = nil,
-		completionHandler: @escaping (DataSnapshot) -> Void
+		completionHandler: @escaping (Result<DataSnapshot, Error>) -> Void
 	) {
 		var query: DatabaseQuery = usersDatabase
 		if let childName = child {
@@ -30,21 +30,31 @@ struct UserFirebaseDataSource {
 			query = query.queryLimited(toFirst: limit)
 		}
 		query.observeSingleEvent(of: .value, with: { (snapshot) in
-			completionHandler(snapshot)
+			completionHandler(.success(snapshot))
 		}) { (error) in
+			completionHandler(.failure(error))
 			log.error(error)
 		}
 	}
 	
-	func newUser(id: String, userProperties: [String: Any]) {
-		usersDatabase.child(id).setValue(userProperties)
+	func newUser(id: String, userProperties: [String: Any], completionHandler: @escaping (Error?) -> Void) {
+		usersDatabase.child(id).setValue(userProperties) { (error, _) in
+			completionHandler(error)
+			log.error(error ?? "Error setting user properties", context: ["id": id, "User": userProperties])
+		}
 	}
 	
-	func updateUser(id: String, field: String, value: Any) {
-		database.child("\(User.childKey)/\(id)/\(field)").setValue(value)
+	func updateUser(id: String, field: String, value: Any, completionHandler: @escaping (Error?) -> Void) {
+		database.child("\(User.childKey)/\(id)/\(field)").setValue(value) { (error, _) in
+			completionHandler(error)
+			log.error(error ?? "Error updating user properties", context: ["id": id, "field": field, "value": value])
+		}
 	}
 	
-	func deleteUser(id: String) {
-		database.child("\(User.childKey)/\(id)").removeValue()
+	func deleteUser(id: String, completionHandler: @escaping (Error?) -> Void) {
+		database.child("\(User.childKey)/\(id)").removeValue() { (error, _) in
+			completionHandler(error)
+			log.error(error ?? "Error deleting user", context: ["id": id])
+		}
 	}
 }

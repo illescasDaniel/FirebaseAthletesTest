@@ -21,9 +21,14 @@ class UsersDataSource: NSObject {
 	// public methods
 	func fetchUsers(completionHandler: @escaping () -> Void) {
 		userRepository.users(orderedByChild: .name) { (userList) in
-			self.allUsers = userList.items.map { $0.value }
-			self.displayedUsers = self.allUsers
-			completionHandler()
+			switch userList {
+			case .success(let validUserList):
+				self.allUsers = validUserList.items.map { $0.value }
+				self.displayedUsers = self.allUsers
+				completionHandler()
+			case .failure(let error):
+				log.error(error)
+			}
 		}
 	}
 }

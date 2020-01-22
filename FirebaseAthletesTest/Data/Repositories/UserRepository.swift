@@ -15,23 +15,23 @@ struct UserRepository {
 	func users(
 		orderedByChild child: User.k? = nil,
 		limit: UInt? = nil,
-		completionHandler: @escaping (UserList) -> Void
+		completionHandler: @escaping (Result<UserList, Error>) -> Void
 	) {
 		firebaseDataSource.users(orderedByChild: child?.rawValue, limit: limit) { snapshot in
-			completionHandler(UserList(keyValuePairs: snapshot.keyValuePairs()))
+			completionHandler(snapshot.map { UserList(keyValuePairs: $0.keyValuePairs()) })
 		}
 	}
 	
-	func newUser(id: String, user: User) {
-		firebaseDataSource.newUser(id: id, userProperties: user.propertiesDictionary)
+	func newUser(id: String, user: User, completionHandler: @escaping (Error?) -> Void) {
+		firebaseDataSource.newUser(id: id, userProperties: user.propertiesDictionary, completionHandler: completionHandler)
 	}
 	
-	func updateUser(id: String, field: User.k, value: Any) {
-		firebaseDataSource.updateUser(id: id, field: field.rawValue, value: value)
+	func updateUser(id: String, field: User.k, value: Any, completionHandler: @escaping (Error?) -> Void) {
+		firebaseDataSource.updateUser(id: id, field: field.rawValue, value: value, completionHandler: completionHandler)
 	}
 	
-	func deleteUser(id: String) {
-		firebaseDataSource.deleteUser(id: id)
+	func deleteUser(id: String, completionHandler: @escaping (Error?) -> Void) {
+		firebaseDataSource.deleteUser(id: id, completionHandler: completionHandler)
 	}
 	
 }

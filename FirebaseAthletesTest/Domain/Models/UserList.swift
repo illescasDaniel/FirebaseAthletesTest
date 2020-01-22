@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct UserList {
+struct UserList: Equatable {
 	
-	struct Item: Codable {
+	struct Item: Equatable, Codable {
 		let id: String
 		let value: User
 	}
