@@ -33,7 +33,7 @@ struct UserFirebaseDataSource {
 			completionHandler(.success(snapshot))
 		}) { (error) in
 			completionHandler(.failure(error))
-			log.error(error)
+			log.error(error, context: ["child": child ?? "nil", "limit": limit ?? "nil"])
 		}
 	}
 	
