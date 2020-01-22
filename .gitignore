@@ -86,3 +86,7 @@ iOSInjectionProject/
 
 .idea
 .idea/*
+
+# Firebase
+FirebaseAthletesTest/GoogleService-Info.plist
+
