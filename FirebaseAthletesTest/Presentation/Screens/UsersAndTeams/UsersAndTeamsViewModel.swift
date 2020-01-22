@@ -13,7 +13,6 @@ class UsersAndTeamsViewModel {
 	
 	// MARK: Properties
 	let usersDataSource = UsersDataSource()
-	var propertyObservers: [NSKeyValueObservation] = []
 	var userListStateObserver: (UsersListState) -> Void = {_ in }
 	private(set) var userListState: UsersListState = .idle {
 		didSet {
@@ -49,12 +48,6 @@ class UsersAndTeamsViewModel {
 			}
 		}
 		self.userListState = .performedSearch(emptyResult: self.usersDataSource.displayedUsers.isEmpty)
-	}
-	
-	//
-	deinit {
-		propertyObservers.forEach { $0.invalidate() }
-		propertyObservers.removeAll()
 	}
 }
 extension UsersAndTeamsViewModel {

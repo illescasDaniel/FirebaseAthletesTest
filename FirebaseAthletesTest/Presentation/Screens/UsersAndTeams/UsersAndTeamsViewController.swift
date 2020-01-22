@@ -12,15 +12,15 @@ class UsersAndTeamsViewController: UIViewController {
 	
 	// MARK: - IBOutlets
 	
-	@IBOutlet weak var usersTeamsSegmentedControl: UISegmentedControl!
-	@IBOutlet weak var dataViewContainer: UIView!
-	@IBOutlet weak var searchBar: UISearchBar!
+	@IBOutlet private weak var usersTeamsSegmentedControl: UISegmentedControl!
+	@IBOutlet private weak var dataViewContainer: UIView!
+	@IBOutlet private weak var searchBar: UISearchBar!
 	
 	// MARK: - Views
 	
 	lazy var viewModel = UsersAndTeamsViewModel()
 	
-	lazy var userCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).apply {
+	private lazy var userCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).apply {
 		$0.backgroundColor = .systemGray6
 		$0.register(
 			UINib(nibName: "\(UserCollectionViewCell.self)", bundle: .main),
@@ -32,20 +32,20 @@ class UsersAndTeamsViewController: UIViewController {
 		$0.addSubview(self.refreshIndicator)
 	}
 	
-	lazy var teamsTableView = UITableView(frame: .zero, style: .plain).apply {
+	private lazy var teamsTableView = UITableView(frame: .zero, style: .plain).apply {
 		$0.backgroundColor = .systemGray6
 		$0.isHidden = true
 	}
 	
-	lazy var activityIndicator: UIActivityIndicatorView? = UIActivityIndicatorView(style: .medium)
+	private lazy var activityIndicator: UIActivityIndicatorView? = UIActivityIndicatorView(style: .medium)
 	
-	lazy var refreshIndicator = UIRefreshControl().apply {
+	private lazy var refreshIndicator = UIRefreshControl().apply {
 		$0.addTarget(self, action: #selector(self.pulledToRefresh), for: .valueChanged)
 	}
 	
 	// MARK: Properties
 	
-	var tabs: [String] {[
+	private var tabs: [String] {[
 		"Athletes", "Teams"
 	]}
 	
@@ -127,7 +127,7 @@ class UsersAndTeamsViewController: UIViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		guard segue.identifier == UserDetailViewController.segueId else { return }
 		guard let controller = segue.destination as? UserDetailViewController else { return }
-		controller.user = sender as? User
+		controller.viewModel.user = sender as? User
 	}
 }
 
