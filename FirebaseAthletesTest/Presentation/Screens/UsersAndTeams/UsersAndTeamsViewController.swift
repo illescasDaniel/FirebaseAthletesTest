@@ -68,6 +68,7 @@ class UsersAndTeamsViewController: UIViewController {
 	// MARK: - Actions
 	
 	@objc private func pulledToRefresh() {
+		self.userCollectionView.backgroundView?.isHidden = true
 		self.viewModel.fetchUsers()
 	}
 	
@@ -97,9 +98,14 @@ class UsersAndTeamsViewController: UIViewController {
 				self.refreshIndicator.endRefreshing()
 				self.userCollectionView.backgroundView?.isHidden = true
 				self.userCollectionView.reloadData()
+			case .errorFetching:
+				let errorFetching = NSLocalizedString("SimpleEmptyState.errorFetchingUsers", comment: "Empty state error fetching users")
+				self.userCollectionView.backgroundView = SimpleEmptyStateLabel.create(text: errorFetching)
+				self.userCollectionView.backgroundView?.isHidden = false
 			case .performedSearch(let emptyResult):
 				if emptyResult {
-					self.userCollectionView.backgroundView = SimpleEmptyStateLabel.create()
+					let noResults = NSLocalizedString("SimpleEmptyState.noResults", comment: "Empty state no results")
+					self.userCollectionView.backgroundView = SimpleEmptyStateLabel.create(text: noResults)
 					self.userCollectionView.backgroundView?.isHidden = false
 				} else {
 					self.userCollectionView.backgroundView?.isHidden = true
@@ -173,6 +179,14 @@ extension UsersAndTeamsViewController: UISearchBarDelegate {
 	}
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		self.view.endEditing(true)
+	}
+	
+	func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+		if case .loading = viewModel.userListState {
+			self.view.endEditing(true)
+			return false
+		}
+		return true
 	}
 }
 

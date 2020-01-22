@@ -9,10 +9,10 @@
 import UIKit
 
 class SimpleEmptyStateLabel: UIView {
-	static func create() -> SimpleEmptyStateLabel {
+	static func create(text: String) -> SimpleEmptyStateLabel {
 		SimpleEmptyStateLabel().apply {
 			let emptyStateLabel = UILabel()
-			emptyStateLabel.text = NSLocalizedString("SimpleEmptyState.noResults", comment: "Empty state no results")
+			emptyStateLabel.text = text
 			emptyStateLabel.textAlignment = .center
 			$0.addSubview(emptyStateLabel)
 			emptyStateLabel.translatesAutoresizingMaskIntoConstraints = false

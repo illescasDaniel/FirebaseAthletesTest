@@ -39,6 +39,8 @@
 		65738DCC23D8CA44008EEF24 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DCB23D8CA44008EEF24 /* UserDetailViewModel.swift */; };
 		65738DD023D8D011008EEF24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65738DD223D8D011008EEF24 /* Localizable.strings */; };
 		65738DD623D8D284008EEF24 /* BetterLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 65738DD523D8D284008EEF24 /* BetterLogger */; };
+		65738DD823D8E3D4008EEF24 /* DefaultUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DD723D8E3D4008EEF24 /* DefaultUserRepository.swift */; };
+		65738DDA23D8E3F3008EEF24 /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DD923D8E3F3008EEF24 /* MockUserRepository.swift */; };
 		881C0387B53CB04B3B7FD074 /* Pods_FirebaseAthletesTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08279C0FDDA03292E70B48C /* Pods_FirebaseAthletesTestTests.framework */; };
 		CEA59B5D2CE42011F926B03D /* Pods_FirebaseAthletesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4B045C1E82B15D6A1789674 /* Pods_FirebaseAthletesTest.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +93,8 @@
 		65738DCB23D8CA44008EEF24 /* UserDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewModel.swift; sourceTree = "<group>"; };
 		65738DD123D8D011008EEF24 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65738DD323D8D04C008EEF24 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		65738DD723D8E3D4008EEF24 /* DefaultUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserRepository.swift; sourceTree = "<group>"; };
+		65738DD923D8E3F3008EEF24 /* MockUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
 		AF8DF85B56302D67B12FBF65 /* Pods-FirebaseAthletesTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAthletesTestTests.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseAthletesTestTests/Pods-FirebaseAthletesTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B08279C0FDDA03292E70B48C /* Pods_FirebaseAthletesTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseAthletesTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36483CE0E7D1EB47D43D35B /* Pods-FirebaseAthletesTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAthletesTest.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseAthletesTest/Pods-FirebaseAthletesTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -284,6 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				65738DAE23D64DC7008EEF24 /* UserRepository.swift */,
+				65738DD723D8E3D4008EEF24 /* DefaultUserRepository.swift */,
+				65738DD923D8E3F3008EEF24 /* MockUserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -536,6 +542,7 @@
 				65738DB423D65557008EEF24 /* UIView+constraints.swift in Sources */,
 				65738DA423D63F38008EEF24 /* UsersDataSource.swift in Sources */,
 				65738DC923D8BAD6008EEF24 /* Chart.swift in Sources */,
+				65738DDA23D8E3F3008EEF24 /* MockUserRepository.swift in Sources */,
 				656AC71E23D6236F004C28E7 /* UserList.swift in Sources */,
 				65738DBC23D7804C008EEF24 /* RoundedView.swift in Sources */,
 				65738DCC23D8CA44008EEF24 /* UserDetailViewModel.swift in Sources */,
@@ -544,6 +551,7 @@
 				656AC72023D62CCE004C28E7 /* Firebase+extension.swift in Sources */,
 				656AC6F523D61610004C28E7 /* SceneDelegate.swift in Sources */,
 				65738DB823D65BEF008EEF24 /* UsersAndTeamsViewModel.swift in Sources */,
+				65738DD823D8E3D4008EEF24 /* DefaultUserRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

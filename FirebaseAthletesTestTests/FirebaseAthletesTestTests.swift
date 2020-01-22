@@ -24,7 +24,7 @@ class FirebaseAthletesTestTests: XCTestCase {
 		expectations.assertForOverFulfill = true
 		expectations.expectedFulfillmentCount = 1
 		
-		let repo = UserRepository()
+		let repo = DefaultUserRepository()
 		let userLimit: UInt = 4
 		repo.users(orderedByChild: .name, limit: userLimit) { (userList) in
 			switch userList {
@@ -51,7 +51,7 @@ class FirebaseAthletesTestTests: XCTestCase {
 		expectations.assertForOverFulfill = true
 		expectations.expectedFulfillmentCount = 2
 		
-		let repo = UserRepository()
+		let repo = DefaultUserRepository()
 		let newUser = User(name: "Daniel", surname: "Illescas", sport: .baseball, weights: [
 			Date(): 70
 		])
@@ -84,7 +84,7 @@ class FirebaseAthletesTestTests: XCTestCase {
 		expectations.assertForOverFulfill = true
 		expectations.expectedFulfillmentCount = 3
 		
-		let repo = UserRepository()
+		let repo = DefaultUserRepository()
 		let newUser = User(name: "Daniel", surname: "Illescas", sport: .baseball, weights: [
 			Date(): 70
 		])

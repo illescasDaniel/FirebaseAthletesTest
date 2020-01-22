@@ -12,22 +12,24 @@ import Firebase
 class UsersDataSource: NSObject {
 	
 	// dependencies
-	let userRepository = UserRepository()
+	let userRepository: UserRepository = DefaultUserRepository()
 	
 	// data
 	private(set) var allUsers: [User] = []
 	var displayedUsers: [User] = []
 	
 	// public methods
-	func fetchUsers(completionHandler: @escaping () -> Void) {
-		userRepository.users(orderedByChild: .name) { (userList) in
+	func fetchUsers(completionHandler: @escaping (Error?) -> Void) {
+		userRepository.users(orderedByChild: .name, limit: nil) { (userList) in
 			switch userList {
 			case .success(let validUserList):
 				self.allUsers = validUserList.items.map { $0.value }
 				self.displayedUsers = self.allUsers
-				completionHandler()
+				completionHandler(nil)
 			case .failure(let error):
+				self.displayedUsers = []
 				log.error(error)
+				completionHandler(error)
 			}
 		}
 	}

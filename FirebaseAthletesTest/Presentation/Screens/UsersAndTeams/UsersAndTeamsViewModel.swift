@@ -24,9 +24,15 @@ class UsersAndTeamsViewModel {
 	// MARK: Methods
 	
 	func fetchUsers() {
+		if case .loading = self.userListState { return }
+		
 		self.userListState = .loading
-		self.usersDataSource.fetchUsers {
-			self.userListState = .loaded
+		self.usersDataSource.fetchUsers { error in
+			if error == nil {
+				self.userListState = .loaded
+			} else {
+				self.userListState = .errorFetching
+			}
 		}
 	}
 	
@@ -36,6 +42,9 @@ class UsersAndTeamsViewModel {
 	///
 	/// Thanks to swift's COW (copy on write) these arrays won't be copying themselves all the time
 	func filterUsersList(withText searchText: String) {
+		
+		if case .loading = self.userListState { return }
+		
 		if searchText.isEmpty {
 			self.usersDataSource.displayedUsers = self.usersDataSource.allUsers
 		} else {
@@ -52,10 +61,14 @@ class UsersAndTeamsViewModel {
 	}
 }
 extension UsersAndTeamsViewModel {
+	// Some states flow:
+	// idle -> loading
+	// loading -> [loaded, errorFetching]
 	enum UsersListState {
 		case idle
 		case loading
 		case loaded
+		case errorFetching
 		case performedSearch(emptyResult: Bool)
 	}
 }

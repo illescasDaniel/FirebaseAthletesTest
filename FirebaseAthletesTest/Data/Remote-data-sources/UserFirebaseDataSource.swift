@@ -32,29 +32,29 @@ struct UserFirebaseDataSource {
 		query.observeSingleEvent(of: .value, with: { (snapshot) in
 			completionHandler(.success(snapshot))
 		}) { (error) in
-			completionHandler(.failure(error))
 			log.error(error, context: ["child": child ?? "nil", "limit": limit ?? "nil"])
+			completionHandler(.failure(error))
 		}
 	}
 	
 	func newUser(id: String, userProperties: [String: Any], completionHandler: @escaping (Error?) -> Void) {
 		usersDatabase.child(id).setValue(userProperties) { (error, _) in
-			completionHandler(error)
 			log.error(error ?? "Error setting user properties", context: ["id": id, "User": userProperties])
+			completionHandler(error)
 		}
 	}
 	
 	func updateUser(id: String, field: String, value: Any, completionHandler: @escaping (Error?) -> Void) {
 		database.child("\(User.childKey)/\(id)/\(field)").setValue(value) { (error, _) in
-			completionHandler(error)
 			log.error(error ?? "Error updating user properties", context: ["id": id, "field": field, "value": value])
+			completionHandler(error)
 		}
 	}
 	
 	func deleteUser(id: String, completionHandler: @escaping (Error?) -> Void) {
 		database.child("\(User.childKey)/\(id)").removeValue() { (error, _) in
-			completionHandler(error)
 			log.error(error ?? "Error deleting user", context: ["id": id])
+			completionHandler(error)
 		}
 	}
 }
