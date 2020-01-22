@@ -65,6 +65,11 @@ class UsersAndTeamsViewController: UIViewController {
 		self.viewModel.fetchUsers()
 	}
 	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		self.view.endEditing(true)
+	}
+	
 	// MARK: - Actions
 	
 	@objc private func pulledToRefresh() {

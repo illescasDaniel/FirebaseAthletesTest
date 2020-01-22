@@ -12,7 +12,13 @@ import Firebase
 class UsersDataSource: NSObject {
 	
 	// dependencies
-	let userRepository: UserRepository = DefaultUserRepository()
+	let userRepository: UserRepository = {
+		#if MOCK
+		return MockUserRepository()
+		#else
+		return DefaultUserRepository()
+		#endif
+	}()
 	
 	// data
 	private(set) var allUsers: [User] = []

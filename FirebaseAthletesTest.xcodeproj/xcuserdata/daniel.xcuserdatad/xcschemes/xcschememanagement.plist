@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>FirebaseAthletesTest (English).xcscheme</key>
+		<key>FirebaseAthletesTest (English).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>20</integer>
@@ -14,10 +14,23 @@
 			<key>orderHint</key>
 			<integer>19</integer>
 		</dict>
+		<key>FirebaseAthletesTest MOCK.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>21</integer>
+		</dict>
 		<key>FirebaseAthletesTest.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>18</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>65738DDB23D8E492008EEF24</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

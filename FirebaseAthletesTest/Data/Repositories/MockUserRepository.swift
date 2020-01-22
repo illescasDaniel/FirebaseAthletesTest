@@ -20,21 +20,21 @@ struct MockUserRepository: UserRepository {
 		completionHandler(.success(UserList(keyValuePairs: [
 			("key1", User(name: "Daniel", surname: "Illescas", sport: .football, weights: [
 				Date(): 10,
-				Date().addingTimeInterval(10): 20,
+				Date().addingTimeInterval(10): 15,
 				Date().addingTimeInterval(20): 30,
-				Date().addingTimeInterval(30): 40,
+				Date().addingTimeInterval(30): 20,
 			])),
-			("key2", User(name: "Daniel", surname: "Illescas", sport: .football, weights: [
+			("key2", User(name: "Pepe", surname: "Illescas", sport: .football, weights: [
+				Date(): 60,
+				Date().addingTimeInterval(10): 40,
+				Date().addingTimeInterval(20): 20,
+				Date().addingTimeInterval(30): 30,
+			])),
+			("key3", User(name: "Pepo", surname: "Illescas", sport: .football, weights: [
 				Date(): 10,
 				Date().addingTimeInterval(10): 20,
 				Date().addingTimeInterval(20): 30,
-				Date().addingTimeInterval(30): 40,
-			])),
-			("key3", User(name: "Daniel", surname: "Illescas", sport: .football, weights: [
-				Date(): 10,
-				Date().addingTimeInterval(10): 20,
-				Date().addingTimeInterval(20): 30,
-				Date().addingTimeInterval(30): 40,
+				Date().addingTimeInterval(30): 20,
 			]))
 		])))
 	}

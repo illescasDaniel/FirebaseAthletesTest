@@ -41,6 +41,40 @@
 		65738DD623D8D284008EEF24 /* BetterLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 65738DD523D8D284008EEF24 /* BetterLogger */; };
 		65738DD823D8E3D4008EEF24 /* DefaultUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DD723D8E3D4008EEF24 /* DefaultUserRepository.swift */; };
 		65738DDA23D8E3F3008EEF24 /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DD923D8E3F3008EEF24 /* MockUserRepository.swift */; };
+		65738DE023D8E492008EEF24 /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DC523D8BAD5008EEF24 /* ChartSeries.swift */; };
+		65738DE123D8E492008EEF24 /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DC723D8BAD6008EEF24 /* ChartColors.swift */; };
+		65738DE223D8E492008EEF24 /* SimpleEmptyStateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DB923D77E3B008EEF24 /* SimpleEmptyStateLabel.swift */; };
+		65738DE323D8E492008EEF24 /* UserFirebaseDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DAB23D64DA7008EEF24 /* UserFirebaseDataSource.swift */; };
+		65738DE423D8E492008EEF24 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DBD23D78757008EEF24 /* UserDetailViewController.swift */; };
+		65738DE523D8E492008EEF24 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DC123D8B998008EEF24 /* ChartView.swift */; };
+		65738DE623D8E492008EEF24 /* UsersAndTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DA123D63EC6008EEF24 /* UsersAndTeamsViewController.swift */; };
+		65738DE723D8E492008EEF24 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DBF23D8B147008EEF24 /* Sport.swift */; };
+		65738DE823D8E492008EEF24 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DAE23D64DC7008EEF24 /* UserRepository.swift */; };
+		65738DE923D8E492008EEF24 /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656AC71823D61DEE004C28E7 /* FirebaseModel.swift */; };
+		65738DEA23D8E492008EEF24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656AC6F223D61610004C28E7 /* AppDelegate.swift */; };
+		65738DEB23D8E492008EEF24 /* String+stringMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738D9F23D63B6C008EEF24 /* String+stringMatching.swift */; };
+		65738DEC23D8E492008EEF24 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656AC71B23D61E58004C28E7 /* User.swift */; };
+		65738DED23D8E492008EEF24 /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DB323D65557008EEF24 /* UIView+constraints.swift */; };
+		65738DEE23D8E492008EEF24 /* UsersDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DA323D63F38008EEF24 /* UsersDataSource.swift */; };
+		65738DEF23D8E492008EEF24 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DC623D8BAD6008EEF24 /* Chart.swift */; };
+		65738DF023D8E492008EEF24 /* MockUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DD923D8E3F3008EEF24 /* MockUserRepository.swift */; };
+		65738DF123D8E492008EEF24 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656AC71D23D6236F004C28E7 /* UserList.swift */; };
+		65738DF223D8E492008EEF24 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DBB23D7804C008EEF24 /* RoundedView.swift */; };
+		65738DF323D8E492008EEF24 /* UserDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DCB23D8CA44008EEF24 /* UserDetailViewModel.swift */; };
+		65738DF423D8E492008EEF24 /* ApplyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DB123D6552F008EEF24 /* ApplyProtocol.swift */; };
+		65738DF523D8E492008EEF24 /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656AC72523D631A6004C28E7 /* UserCollectionViewCell.swift */; };
+		65738DF623D8E492008EEF24 /* Firebase+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656AC71F23D62CCE004C28E7 /* Firebase+extension.swift */; };
+		65738DF723D8E492008EEF24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656AC6F423D61610004C28E7 /* SceneDelegate.swift */; };
+		65738DF823D8E492008EEF24 /* UsersAndTeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DB723D65BEF008EEF24 /* UsersAndTeamsViewModel.swift */; };
+		65738DF923D8E492008EEF24 /* DefaultUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65738DD723D8E3D4008EEF24 /* DefaultUserRepository.swift */; };
+		65738DFB23D8E492008EEF24 /* BetterLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 65738DDC23D8E492008EEF24 /* BetterLogger */; };
+		65738DFC23D8E492008EEF24 /* Pods_FirebaseAthletesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4B045C1E82B15D6A1789674 /* Pods_FirebaseAthletesTest.framework */; };
+		65738DFE23D8E492008EEF24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656AC6FD23D61612004C28E7 /* LaunchScreen.storyboard */; };
+		65738DFF23D8E492008EEF24 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65738DD223D8D011008EEF24 /* Localizable.strings */; };
+		65738E0023D8E492008EEF24 /* UserCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 656AC72623D631A6004C28E7 /* UserCollectionViewCell.xib */; };
+		65738E0123D8E492008EEF24 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 656AC71423D6174A004C28E7 /* GoogleService-Info.plist */; };
+		65738E0223D8E492008EEF24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 656AC6FB23D61612004C28E7 /* Assets.xcassets */; };
+		65738E0323D8E492008EEF24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 656AC6F823D61610004C28E7 /* Main.storyboard */; };
 		881C0387B53CB04B3B7FD074 /* Pods_FirebaseAthletesTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B08279C0FDDA03292E70B48C /* Pods_FirebaseAthletesTestTests.framework */; };
 		CEA59B5D2CE42011F926B03D /* Pods_FirebaseAthletesTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4B045C1E82B15D6A1789674 /* Pods_FirebaseAthletesTest.framework */; };
 /* End PBXBuildFile section */
@@ -95,6 +129,8 @@
 		65738DD323D8D04C008EEF24 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		65738DD723D8E3D4008EEF24 /* DefaultUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultUserRepository.swift; sourceTree = "<group>"; };
 		65738DD923D8E3F3008EEF24 /* MockUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserRepository.swift; sourceTree = "<group>"; };
+		65738E0823D8E492008EEF24 /* FirebaseAthletesTest MOCK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FirebaseAthletesTest MOCK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65738E0923D8E493008EEF24 /* FirebaseAthletesTest copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FirebaseAthletesTest copy-Info.plist"; path = "/Users/daniel/Documents/Programming/IDE Projects/Xcode/Projects/FirebaseAthletesTest/FirebaseAthletesTest copy-Info.plist"; sourceTree = "<absolute>"; };
 		AF8DF85B56302D67B12FBF65 /* Pods-FirebaseAthletesTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAthletesTestTests.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseAthletesTestTests/Pods-FirebaseAthletesTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B08279C0FDDA03292E70B48C /* Pods_FirebaseAthletesTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseAthletesTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B36483CE0E7D1EB47D43D35B /* Pods-FirebaseAthletesTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseAthletesTest.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseAthletesTest/Pods-FirebaseAthletesTest.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,6 +156,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		65738DFA23D8E492008EEF24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65738DFB23D8E492008EEF24 /* BetterLogger in Frameworks */,
+				65738DFC23D8E492008EEF24 /* Pods_FirebaseAthletesTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -140,6 +185,7 @@
 				656AC6F023D61610004C28E7 /* Products */,
 				D4743FF40CC0EDCD67545CEC /* Pods */,
 				1E0906041D77D677B04A01AA /* Frameworks */,
+				65738E0923D8E493008EEF24 /* FirebaseAthletesTest copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +194,7 @@
 			children = (
 				656AC6EF23D61610004C28E7 /* FirebaseAthletesTest.app */,
 				656AC70523D61613004C28E7 /* FirebaseAthletesTestTests.xctest */,
+				65738E0823D8E492008EEF24 /* FirebaseAthletesTest MOCK.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -392,6 +439,28 @@
 			productReference = 656AC70523D61613004C28E7 /* FirebaseAthletesTestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		65738DDB23D8E492008EEF24 /* FirebaseAthletesTest MOCK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65738E0523D8E492008EEF24 /* Build configuration list for PBXNativeTarget "FirebaseAthletesTest MOCK" */;
+			buildPhases = (
+				65738DDE23D8E492008EEF24 /* [CP] Check Pods Manifest.lock */,
+				65738DDF23D8E492008EEF24 /* Sources */,
+				65738DFA23D8E492008EEF24 /* Frameworks */,
+				65738DFD23D8E492008EEF24 /* Resources */,
+				65738E0423D8E492008EEF24 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FirebaseAthletesTest MOCK";
+			packageProductDependencies = (
+				65738DDC23D8E492008EEF24 /* BetterLogger */,
+			);
+			productName = FirebaseAthletesTest;
+			productReference = 65738E0823D8E492008EEF24 /* FirebaseAthletesTest MOCK.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -429,6 +498,7 @@
 			projectRoot = "";
 			targets = (
 				656AC6EE23D61610004C28E7 /* FirebaseAthletesTest */,
+				65738DDB23D8E492008EEF24 /* FirebaseAthletesTest MOCK */,
 				656AC70423D61613004C28E7 /* FirebaseAthletesTestTests */,
 			);
 		};
@@ -452,6 +522,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65738DFD23D8E492008EEF24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65738DFE23D8E492008EEF24 /* LaunchScreen.storyboard in Resources */,
+				65738DFF23D8E492008EEF24 /* Localizable.strings in Resources */,
+				65738E0023D8E492008EEF24 /* UserCollectionViewCell.xib in Resources */,
+				65738E0123D8E492008EEF24 /* GoogleService-Info.plist in Resources */,
+				65738E0223D8E492008EEF24 /* Assets.xcassets in Resources */,
+				65738E0323D8E492008EEF24 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +564,45 @@
 			showEnvVarsInLog = 0;
 		};
 		6247B302CF63FAD6B9EFF540 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirebaseAthletesTest/Pods-FirebaseAthletesTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirebaseAthletesTest/Pods-FirebaseAthletesTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirebaseAthletesTest/Pods-FirebaseAthletesTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65738DDE23D8E492008EEF24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FirebaseAthletesTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65738E0423D8E492008EEF24 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -560,6 +682,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				656AC70A23D61613004C28E7 /* FirebaseAthletesTestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65738DDF23D8E492008EEF24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65738DE023D8E492008EEF24 /* ChartSeries.swift in Sources */,
+				65738DE123D8E492008EEF24 /* ChartColors.swift in Sources */,
+				65738DE223D8E492008EEF24 /* SimpleEmptyStateLabel.swift in Sources */,
+				65738DE323D8E492008EEF24 /* UserFirebaseDataSource.swift in Sources */,
+				65738DE423D8E492008EEF24 /* UserDetailViewController.swift in Sources */,
+				65738DE523D8E492008EEF24 /* ChartView.swift in Sources */,
+				65738DE623D8E492008EEF24 /* UsersAndTeamsViewController.swift in Sources */,
+				65738DE723D8E492008EEF24 /* Sport.swift in Sources */,
+				65738DE823D8E492008EEF24 /* UserRepository.swift in Sources */,
+				65738DE923D8E492008EEF24 /* FirebaseModel.swift in Sources */,
+				65738DEA23D8E492008EEF24 /* AppDelegate.swift in Sources */,
+				65738DEB23D8E492008EEF24 /* String+stringMatching.swift in Sources */,
+				65738DEC23D8E492008EEF24 /* User.swift in Sources */,
+				65738DED23D8E492008EEF24 /* UIView+constraints.swift in Sources */,
+				65738DEE23D8E492008EEF24 /* UsersDataSource.swift in Sources */,
+				65738DEF23D8E492008EEF24 /* Chart.swift in Sources */,
+				65738DF023D8E492008EEF24 /* MockUserRepository.swift in Sources */,
+				65738DF123D8E492008EEF24 /* UserList.swift in Sources */,
+				65738DF223D8E492008EEF24 /* RoundedView.swift in Sources */,
+				65738DF323D8E492008EEF24 /* UserDetailViewModel.swift in Sources */,
+				65738DF423D8E492008EEF24 /* ApplyProtocol.swift in Sources */,
+				65738DF523D8E492008EEF24 /* UserCollectionViewCell.swift in Sources */,
+				65738DF623D8E492008EEF24 /* Firebase+extension.swift in Sources */,
+				65738DF723D8E492008EEF24 /* SceneDelegate.swift in Sources */,
+				65738DF823D8E492008EEF24 /* UsersAndTeamsViewModel.swift in Sources */,
+				65738DF923D8E492008EEF24 /* DefaultUserRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +887,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "es.illescas-daniel-test.firebaseAthletes.FirebaseAthletesTest";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -802,6 +958,53 @@
 			};
 			name = Release;
 		};
+		65738E0623D8E492008EEF24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B36483CE0E7D1EB47D43D35B /* Pods-FirebaseAthletesTest.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52SZT5H49E;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"$(inherited)",
+					"PB_FIELD_32BIT=1",
+					"PB_NO_PACKED_STRUCTS=1",
+					"PB_ENABLE_MALLOC=1",
+				);
+				INFOPLIST_FILE = "FirebaseAthletesTest copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "es.illescas-daniel-test.firebaseAthletes.FirebaseAthletesTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG MOCK";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65738E0723D8E492008EEF24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC3F071BA78D38767441A289 /* Pods-FirebaseAthletesTest.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52SZT5H49E;
+				INFOPLIST_FILE = "FirebaseAthletesTest copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "es.illescas-daniel-test.firebaseAthletes.FirebaseAthletesTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -832,10 +1035,27 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		65738E0523D8E492008EEF24 /* Build configuration list for PBXNativeTarget "FirebaseAthletesTest MOCK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65738E0623D8E492008EEF24 /* Debug */,
+				65738E0723D8E492008EEF24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		65738DD423D8D284008EEF24 /* XCRemoteSwiftPackageReference "BetterLogger" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/illescasDaniel/BetterLogger.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.2;
+			};
+		};
+		65738DDD23D8E492008EEF24 /* XCRemoteSwiftPackageReference "BetterLogger" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/illescasDaniel/BetterLogger.git";
 			requirement = {
@@ -849,6 +1069,11 @@
 		65738DD523D8D284008EEF24 /* BetterLogger */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 65738DD423D8D284008EEF24 /* XCRemoteSwiftPackageReference "BetterLogger" */;
+			productName = BetterLogger;
+		};
+		65738DDC23D8E492008EEF24 /* BetterLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 65738DDD23D8E492008EEF24 /* XCRemoteSwiftPackageReference "BetterLogger" */;
 			productName = BetterLogger;
 		};
 /* End XCSwiftPackageProductDependency section */
