@@ -106,9 +106,7 @@ class UsersAndTeamsViewController: UIViewController {
 				self.refreshIndicator.endRefreshing()
 				self.userCollectionView.backgroundView?.isHidden = true
 				self.userCollectionView.reloadData()
-				
-				self.userCollectionView.layoutIfNeeded()
-				self.dataViewContainerHeightConstraint.constant = self.userCollectionView.contentSize.height
+				self.reloadCollectionViewSize()
 			case .errorFetching:
 				let errorFetching = NSLocalizedString("SimpleEmptyState.errorFetchingUsers", comment: "Empty state error fetching users")
 				self.userCollectionView.backgroundView = SimpleEmptyStateLabel.create(text: errorFetching)
@@ -122,8 +120,14 @@ class UsersAndTeamsViewController: UIViewController {
 					self.userCollectionView.backgroundView?.isHidden = true
 				}
 				self.userCollectionView.reloadData()
+				self.reloadCollectionViewSize()
 			}
 		}
+	}
+	
+	private func reloadCollectionViewSize() {
+		self.userCollectionView.layoutIfNeeded()
+		self.dataViewContainerHeightConstraint.constant = self.userCollectionView.contentSize.height
 	}
 	
 	private func setupViews() {
