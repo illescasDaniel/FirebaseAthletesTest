@@ -15,6 +15,7 @@ class UsersAndTeamsViewController: UIViewController {
 	@IBOutlet private weak var usersTeamsSegmentedControl: UISegmentedControl!
 	@IBOutlet private weak var dataViewContainer: UIView!
 	@IBOutlet private weak var searchBar: UISearchBar!
+	@IBOutlet private weak var dataViewContainerHeightConstraint: NSLayoutConstraint!
 	
 	// MARK: - Views
 	
@@ -30,11 +31,13 @@ class UsersAndTeamsViewController: UIViewController {
 		$0.delegate = self
 		$0.backgroundView = self.activityIndicator
 		$0.addSubview(self.refreshIndicator)
+		$0.isScrollEnabled = false
 	}
 	
 	private lazy var teamsTableView = UITableView(frame: .zero, style: .plain).apply {
 		$0.backgroundColor = .systemGray6
 		$0.isHidden = true
+		$0.isScrollEnabled = false
 	}
 	
 	private lazy var activityIndicator: UIActivityIndicatorView? = UIActivityIndicatorView(style: .medium)
@@ -103,6 +106,9 @@ class UsersAndTeamsViewController: UIViewController {
 				self.refreshIndicator.endRefreshing()
 				self.userCollectionView.backgroundView?.isHidden = true
 				self.userCollectionView.reloadData()
+				
+				self.userCollectionView.layoutIfNeeded()
+				self.dataViewContainerHeightConstraint.constant = self.userCollectionView.contentSize.height
 			case .errorFetching:
 				let errorFetching = NSLocalizedString("SimpleEmptyState.errorFetchingUsers", comment: "Empty state error fetching users")
 				self.userCollectionView.backgroundView = SimpleEmptyStateLabel.create(text: errorFetching)

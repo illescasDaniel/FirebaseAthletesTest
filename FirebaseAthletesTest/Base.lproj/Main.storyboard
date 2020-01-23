@@ -15,45 +15,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NKw-MY-cO6">
-                                <rect key="frame" x="16" y="140" width="343" height="31"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LnC-X0-Gwu">
+                                <rect key="frame" x="0.0" y="140" width="375" height="672"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="zkD-au-fBD">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="672"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CrR-LU-0sU">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NKw-MY-cO6">
+                                                        <rect key="frame" x="16" y="0.0" width="343" height="31"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="qd4-zk-d5r"/>
+                                                        </constraints>
+                                                        <segments>
+                                                            <segment title="First"/>
+                                                            <segment title="Second"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="usersTeamsSegmentedControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="EP6-wS-g7w"/>
+                                                        </connections>
+                                                    </segmentedControl>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="NKw-MY-cO6" firstAttribute="top" secondItem="CrR-LU-0sU" secondAttribute="top" id="OkI-qM-Nrq"/>
+                                                    <constraint firstItem="NKw-MY-cO6" firstAttribute="leading" secondItem="CrR-LU-0sU" secondAttribute="leading" constant="16" id="V0g-Pt-AWC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="NKw-MY-cO6" secondAttribute="bottom" id="Ws1-2h-IXa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="NKw-MY-cO6" secondAttribute="trailing" constant="16" id="vfr-WJ-sBX"/>
+                                                </constraints>
+                                            </view>
+                                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Nab-Zo-6fg">
+                                                <rect key="frame" x="0.0" y="46" width="375" height="56"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="GyN-dZ-Jhk"/>
+                                                </constraints>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </searchBar>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtC-NH-rc8">
+                                                <rect key="frame" x="0.0" y="118" width="375" height="554"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="554" id="K9a-cV-4Jx"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="qd4-zk-d5r"/>
+                                    <constraint firstItem="zkD-au-fBD" firstAttribute="leading" secondItem="LnC-X0-Gwu" secondAttribute="leading" id="0Nw-7o-yCq"/>
+                                    <constraint firstAttribute="trailing" secondItem="zkD-au-fBD" secondAttribute="trailing" id="KuF-K3-eMl"/>
+                                    <constraint firstItem="zkD-au-fBD" firstAttribute="bottom" secondItem="LnC-X0-Gwu" secondAttribute="bottom" id="PvY-eU-nY2"/>
+                                    <constraint firstItem="zkD-au-fBD" firstAttribute="top" secondItem="LnC-X0-Gwu" secondAttribute="top" id="m5e-dY-TTV"/>
+                                    <constraint firstItem="zkD-au-fBD" firstAttribute="width" secondItem="LnC-X0-Gwu" secondAttribute="width" id="yAa-Ns-UT3"/>
                                 </constraints>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                                <connections>
-                                    <action selector="usersTeamsSegmentedControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="EP6-wS-g7w"/>
-                                </connections>
-                            </segmentedControl>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="Nab-Zo-6fg">
-                                <rect key="frame" x="8" y="178" width="0.0" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtC-NH-rc8">
-                                <rect key="frame" x="0.0" y="242" width="375" height="570"/>
-                            </view>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="rtC-NH-rc8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0VS-ak-kaL"/>
-                            <constraint firstItem="NKw-MY-cO6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="0dG-Wv-lkm"/>
-                            <constraint firstItem="rtC-NH-rc8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="38y-jo-FJL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NKw-MY-cO6" secondAttribute="trailing" constant="16" id="A04-BG-pop"/>
-                            <constraint firstItem="Nab-Zo-6fg" firstAttribute="top" secondItem="NKw-MY-cO6" secondAttribute="bottom" constant="8" id="HE5-E1-pzZ"/>
-                            <constraint firstAttribute="bottom" secondItem="rtC-NH-rc8" secondAttribute="bottom" id="P9w-fI-7Iv"/>
-                            <constraint firstItem="NKw-MY-cO6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dN6-K6-XRI"/>
-                            <constraint firstItem="Nab-Zo-6fg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="hcI-x1-qcq"/>
-                            <constraint firstItem="Nab-Zo-6fg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-8" id="ppL-DZ-HOq"/>
-                            <constraint firstItem="rtC-NH-rc8" firstAttribute="top" secondItem="Nab-Zo-6fg" secondAttribute="bottom" constant="8" id="vK8-xJ-gpY"/>
+                            <constraint firstAttribute="bottom" secondItem="LnC-X0-Gwu" secondAttribute="bottom" id="riQ-u9-HGk"/>
+                            <constraint firstItem="LnC-X0-Gwu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tzL-Gh-6Hc"/>
+                            <constraint firstItem="LnC-X0-Gwu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wJX-GM-ujU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LnC-X0-Gwu" secondAttribute="trailing" id="zGK-lA-ZsI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="o8I-KA-WPh"/>
                     <connections>
                         <outlet property="dataViewContainer" destination="rtC-NH-rc8" id="Q7T-Gv-6BA"/>
+                        <outlet property="dataViewContainerHeightConstraint" destination="K9a-cV-4Jx" id="uRn-vU-CKW"/>
                         <outlet property="searchBar" destination="Nab-Zo-6fg" id="hD0-lk-Yb4"/>
                         <outlet property="usersTeamsSegmentedControl" destination="NKw-MY-cO6" id="I7G-iB-yGq"/>
                         <segue destination="66T-Kw-X76" kind="show" identifier="showUserDetail" id="pAr-lx-PBI"/>
@@ -61,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="129.91071428571428"/>
+            <point key="canvasLocation" x="1047.2" y="129.31034482758622"/>
         </scene>
         <!--User Detail View Controller-->
         <scene sceneID="8fX-Hd-Va6">
@@ -128,8 +157,8 @@
                             <mask key="constraints">
                                 <include reference="zss-xr-VYN"/>
                                 <exclude reference="Q9v-g1-Xh4"/>
-                                <include reference="auZ-2Q-J0r"/>
                                 <exclude reference="8pt-S9-OHb"/>
+                                <include reference="auZ-2Q-J0r"/>
                             </mask>
                         </variation>
                     </view>
