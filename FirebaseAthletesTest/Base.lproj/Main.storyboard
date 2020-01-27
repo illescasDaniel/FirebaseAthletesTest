@@ -130,6 +130,11 @@
                                         <exclude reference="OFv-Wf-uBy"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="OFv-Wf-uBy"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -143,6 +148,7 @@
                             <constraint firstItem="vuM-sO-RH3" firstAttribute="trailing" secondItem="qwF-Or-RdV" secondAttribute="trailing" constant="16" id="nYN-4R-ros"/>
                             <constraint firstItem="qwF-Or-RdV" firstAttribute="bottom" secondItem="vuM-sO-RH3" secondAttribute="bottom" constant="-40" id="o0F-pD-iOx">
                                 <variation key="heightClass=compact-widthClass=compact" constant="-16"/>
+                                <variation key="heightClass=compact-widthClass=regular" constant="-16"/>
                             </constraint>
                             <constraint firstItem="vuM-sO-RH3" firstAttribute="top" secondItem="Plz-gP-lbY" secondAttribute="top" constant="-4" id="zss-xr-VYN"/>
                         </constraints>
@@ -154,6 +160,14 @@
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="zss-xr-VYN"/>
+                                <exclude reference="Q9v-g1-Xh4"/>
+                                <exclude reference="8pt-S9-OHb"/>
+                                <include reference="auZ-2Q-J0r"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
                             <mask key="constraints">
                                 <include reference="zss-xr-VYN"/>
                                 <exclude reference="Q9v-g1-Xh4"/>
