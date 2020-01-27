@@ -30,7 +30,43 @@ struct MockUserRepository: UserRepository {
 				Date().addingTimeInterval(20): 20,
 				Date().addingTimeInterval(30): 30,
 			])),
-			("key3", User(name: "Pepo", surname: "Illescas", sport: .football, weights: [
+			("key3", User(name: "Daniel", surname: "Illescas", sport: .football, weights: [
+				Date(): 10,
+				Date().addingTimeInterval(10): 20,
+				Date().addingTimeInterval(20): 30,
+				Date().addingTimeInterval(30): 20,
+			])),
+			("key4", User(name: "Daniel", surname: "Illescas", sport: .football, weights: [
+				Date(): 10,
+				Date().addingTimeInterval(10): 15,
+				Date().addingTimeInterval(20): 30,
+				Date().addingTimeInterval(30): 20,
+			])),
+			("key5", User(name: "Daniel", surname: "Illescas", sport: .football, weights: [
+				Date(): 60,
+				Date().addingTimeInterval(10): 40,
+				Date().addingTimeInterval(20): 20,
+				Date().addingTimeInterval(30): 30,
+			])),
+			("key6", User(name: "Daniel", surname: "Illescas", sport: .football, weights: [
+				Date(): 10,
+				Date().addingTimeInterval(10): 20,
+				Date().addingTimeInterval(20): 30,
+				Date().addingTimeInterval(30): 20,
+			])),
+			("key7", User(name: "Daniel", surname: "Illescas", sport: .football, weights: [
+				Date(): 10,
+				Date().addingTimeInterval(10): 15,
+				Date().addingTimeInterval(20): 30,
+				Date().addingTimeInterval(30): 20,
+			])),
+			("key8", User(name: "Daniel", surname: "Illescas", sport: .football, weights: [
+				Date(): 60,
+				Date().addingTimeInterval(10): 40,
+				Date().addingTimeInterval(20): 20,
+				Date().addingTimeInterval(30): 30,
+			])),
+			("key9", User(name: "Daniel", surname: "Illescas", sport: .football, weights: [
 				Date(): 10,
 				Date().addingTimeInterval(10): 20,
 				Date().addingTimeInterval(20): 30,

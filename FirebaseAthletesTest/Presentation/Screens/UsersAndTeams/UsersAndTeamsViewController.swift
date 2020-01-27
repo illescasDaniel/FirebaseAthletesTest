@@ -127,7 +127,13 @@ class UsersAndTeamsViewController: UIViewController {
 	
 	private func reloadCollectionViewSize() {
 		self.userCollectionView.layoutIfNeeded()
-		self.dataViewContainerHeightConstraint.constant = self.userCollectionView.contentSize.height
+		let collectionContentHeight = self.userCollectionView.contentSize.height
+		if collectionContentHeight == 0, let bgView = self.userCollectionView.backgroundView {
+			self.userCollectionView.backgroundView?.layoutIfNeeded()
+			self.dataViewContainerHeightConstraint.constant = bgView.bounds.height
+		} else {
+			self.dataViewContainerHeightConstraint.constant = collectionContentHeight
+		}
 	}
 	
 	private func setupViews() {
